@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Book Now</title>
+    </head>
+    <body id="page1">
+        <style>
+            #header {
+                height: 83px;
+                width: 1600px;
+                margin-top: -8px;
+                margin-left: -8px;
+                position: fixed;
+            }
+            #logo {
+                position: fixed;
+                margin-top: -72px;
+                margin-left: 190px;
+            }
+            #menu {
+                position: fixed;
+                margin-top: 8px;
+                margin-left: 600px;
+            }
+            #ulist {
+                list-style: none;
+            }
+            #ulist li {
+                font: menu;
+                color: white;
+                text-transform: uppercase;
+                display: inline-block;
+                font-size: 30px;
+                
+            }
+            #ulist li a {
+                padding-left: 7px;
+                padding-right: 7px;
+                padding-top: 35px;
+                padding-bottom: 20px;
+                font-size: 18px;
+                outline: 0;
+            }
+            .mainLinks {
+                text-decoration: none;
+            }
+            #ulist > li > a:link {
+
+            }
+            #ulist > li > a:hover {
+                background-color: red;
+                border-radius: 0px 0px 8px 8px;
+            }
+            #ulist > li > a:active {
+                background-color: red;
+                border-radius: 0px 0px 8px 8px;
+            }
+            #ulist > li > a:focus {
+                background-color: red;
+                border-radius: 0px 0px 8px 8px;
+            }
+            #ulist > li > a:visited {
+                background-color: red;
+                border-radius: 0px 0px 8px 8px;
+            }
+            .body {
+                background-image: url("/Content/themes/base/images/back7.jpg");
+                background-repeat: repeat;
+                height: 900px;
+                width: 1583px;
+                margin-left: -8px;
+                padding-top: 180px;
+            }
+            #mov {
+                padding-left: 265px;
+                padding-top: 0px;
+            }
+            #mov li {
+                list-style: none;
+                display: inline-block;
+            }
+            #mov li p {
+                font-size: 25px;
+                color: white;
+                text-align: center;
+            }
+            #mov > li > a {
+                text-decoration: none;
+                font-size: 19px;
+            }
+            .movie {
+                display: block;
+            }
+            .line {
+                background-color: white;
+                height: 70px;
+                width: 2px;
+                border: 1px solid white;
+                display: inline;
+            }
+            .block {
+                border: 2px solid white;
+                height: 140px;
+                width: 1040px;
+                display: none;
+                margin-left: 250px;
+                margin-top: 10px;
+                background-color: lightgray;
+                border: none;
+                border-top:8px groove yellow;
+                padding-left: 25px;
+            }
+            .block > p{
+                font-size: 23px;
+                font-family: Arial;
+                font-style: normal;
+            }
+            .mb {
+                border: 2px solid white;
+                height: 138px;
+                border-radius: 30px 30px 30px 30px;
+                width: 200px;
+                text-align: center;
+                padding-left: 75px;
+                margin-top: -2px;
+                display: inline;
+                background: none;
+            }
+            .mb:focus {
+                outline: 0;
+            }
+            #bmov1 {
+                border: 2px solid yellow;
+                height: 50px;
+                width: 0px;
+                display: none;
+                margin-left: 350px;
+                margin-bottom: -13px;
+                margin-top: -12px;
+            }
+            #bcin1 {
+                border: 2px solid yellow;
+                height: 50px;
+                width: 0px;
+                display: none;
+                margin-left: 550px;
+                margin-bottom: -13px;
+                margin-top: -12px;
+            }
+            #btra1 {
+                border: 2px solid yellow;
+                height: 50px;
+                width: 0px;
+                display: none;
+                margin-left: 750px;
+                margin-bottom: -13px;
+                margin-top: -12px;
+            }
+            #beve1 {
+                border: 2px solid yellow;
+                height: 50px;
+                width: 0px;
+                display: none;
+                margin-left: 950px;
+                margin-bottom: -13px;
+                margin-top: -12px;
+            }
+            .city {
+                display: block;
+                width: 154px;
+                height: 34px;
+                background-color: DodgerBlue;
+                outline: 0;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .bmov2 {
+                padding: 15px;
+                background-color: white;
+                width: 154px;
+                margin-top: -15px;
+                display: inline-block;
+            }
+        </style>
+        <script>
+            function clicked1() {
+                document.getElementById("bmov").style.display = "block";
+                document.getElementById("bcin").style.display = "none";
+                document.getElementById("btra").style.display = "none";
+                document.getElementById("beve").style.display = "none";
+                document.getElementById("bmov1").style.display = "inline-block";
+                document.getElementById("bcin1").style.display = "none";
+                document.getElementById("btra1").style.display = "none";
+                document.getElementById("beve1").style.display = "none";
+            }
+            function clicked2() {
+                document.getElementById("bmov").style.display = "none";
+                document.getElementById("bcin").style.display = "block";
+                document.getElementById("btra").style.display = "none";
+                document.getElementById("beve").style.display = "none";
+                document.getElementById("bcin1").style.display = "inline-block";
+                document.getElementById("bmov1").style.display = "none";
+                document.getElementById("btra1").style.display = "none";
+                document.getElementById("beve1").style.display = "none";
+            }
+            function clicked3() {
+                document.getElementById("bmov").style.display = "none";
+                document.getElementById("bcin").style.display = "none";
+                document.getElementById("btra").style.display = "block";
+                document.getElementById("beve").style.display = "none";
+                document.getElementById("btra1").style.display = "inline-block";
+                document.getElementById("bcin1").style.display = "none";
+                document.getElementById("bmov1").style.display = "none";
+                document.getElementById("beve1").style.display = "none";
+            }
+            function clicked4() {
+                document.getElementById("bmov").style.display = "none";
+                document.getElementById("bcin").style.display = "none";
+                document.getElementById("btra").style.display = "none";
+                document.getElementById("beve").style.display = "block";
+                document.getElementById("beve1").style.display = "inline-block";
+                document.getElementById("bcin1").style.display = "none";
+                document.getElementById("btra1").style.display = "none";
+                document.getElementById("bmov1").style.display = "none";
+            }
+            function homeFocus() {
+                document.getElementById("curr").focus();
+                document.getElementById("curr").style.backgroundColor = "Red";
+                document.getElementById("curr").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("mov1");
+                homeblurr("tra");
+                homeblurr("eve");
+                homeblurr("abo");
+                homeblurr("con");
+                homeblurr("sig");
+            }
+            function movieFocus() {
+                document.getElementById("mov1").focus();
+                document.getElementById("mov1").style.backgroundColor = "Red";
+                document.getElementById("mov1").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("curr");
+                homeblurr("tra");
+                homeblurr("eve");
+                homeblurr("abo");
+                homeblurr("con");
+                homeblurr("sig");
+            }
+            function transportFocus() {
+                document.getElementById("tra").focus();
+                document.getElementById("tra").style.backgroundColor = "Red";
+                document.getElementById("tra").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("mov1");
+                homeblurr("curr");
+                homeblurr("eve");
+                homeblurr("abo");
+                homeblurr("con");
+                homeblurr("sig");
+            }
+            function eventFocus() {
+                document.getElementById("eve").focus();
+                document.getElementById("eve").style.backgroundColor = "Red";
+                document.getElementById("eve").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("mov1");
+                homeblurr("tra");
+                homeblurr("curr");
+                homeblurr("abo");
+                homeblurr("con");
+                homeblurr("sig");
+            }
+            function aboutFocus() {
+                document.getElementById("abo").focus();
+                document.getElementById("abo").style.backgroundColor = "Red";
+                document.getElementById("abo").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("mov1");
+                homeblurr("tra");
+                homeblurr("eve");
+                homeblurr("curr");
+                homeblurr("con");
+                homeblurr("sig");
+            }
+            function contactFocus() {
+                document.getElementById("con").focus();
+                document.getElementById("con").style.backgroundColor = "Red";
+                document.getElementById("con").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("mov1");
+                homeblurr("tra");
+                homeblurr("eve");
+                homeblurr("abo");
+                homeblurr("curr");
+                homeblurr("sig");
+            }
+            function signFocus() {
+                document.getElementById("sig").focus();
+                document.getElementById("sig").style.backgroundColor = "Red";
+                document.getElementById("sig").style.borderRadius = "0px 0px 8px 8px";
+                homeblurr("mov1");
+                homeblurr("tra");
+                homeblurr("eve");
+                homeblurr("abo");
+                homeblurr("con");
+                homeblurr("curr");
+            }
+            function homeblurr(x) {
+                document.getElementById(x).blur();
+                document.getElementById(x).style.background = "none";
+            }
+            function hover(x) {
+                document.getElementById(x).style.backgroundColor = "Red";
+                document.getElementById(x).style.borderRadius = "0px 0px 8px 8px";
+            }
+            function out(x) {
+                document.getElementById(x).style.background = "none";
+            }
+            window.onload = function () {
+                document.getElementById("curr").focus();
+                document.getElementById("bmov").style.display = "block";
+                document.getElementById("bmov1").style.display = "inline-block";
+            }
+            
+        </script>
+        <header id="header" style="background-color: black">
+            <div id="main">
+                <nav id="mainNav">
+                    <a href="#"><img src="~/Content/themes/base/images/booknow.png" id="logo" /></a>
+                    <div id="menu">
+                        <ul id="ulist">
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="curr" onfocus="homeFocus()">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="mov1" onfocus="movieFocus()">Movies</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="tra" onfocus="transportFocus()">Transport</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="eve" onfocus="eventFocus()">Events</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="abo" onfocus="aboutFocus()">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="con" onfocus="contactFocus()">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white" class="mainLinks" id="sig" onfocus="signFocus()">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="body">
+            <ul id="mov">
+                <li>
+                    <p onclick="clicked1()">Movies</p>
+                    <button type="button" class="mb" id="movbut" onclick="clicked1()">
+                        <img src="~/Content/themes/base/images/movie.png" class="movie"/>
+                    </button>
+                </li>
+                <li>
+                    <p onclick="clicked2()">Cinema</p>
+                    <button type="button" class="mb" id="cinbut" onclick="clicked2()">
+                        <img src="~/Content/themes/base/images/cinema.png" class="movie"/>
+                    </button>
+                </li>
+                <li>
+                    <p onclick="clicked3()">Transport</p>
+                    <button type="button" class="mb" id="trabut" onclick="clicked3()">
+                        <img src="~/Content/themes/base/images/transport.png" class="movie"/>
+                    </button>
+                </li>
+                <li>
+                    <p onclick="clicked4()">Events</p>
+                    <button type="button" class="mb" id="evebut" onclick="clicked4()">
+                        <img src="~/Content/themes/base/images/event.png" class="movie"/>
+                    </button>
+                </li>
+            </ul>
+            <div id="bmov1"></div>
+            <div class="block" id="bmov">
+                <p>Which Movie Do You Want To Watch?</p>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>City</option>
+                        <option value="1">Lahore</option>
+                        <option value="2">Faislabad</option>
+                        <option value="3">Multan</option>
+                        <option value="4">Karachi</option>
+                        <option value="5">Islamabad</option>
+                        <option value="6">Rawalpindi</option>
+                        <option value="7">Quetta</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Movie</option>
+                        <option value="1">Notebook</option>
+                        <option value="2">Lucifer</option>
+                        <option value="3">Shazam!</option>
+                        <option value="3">Captive State</option>
+                        <option value="3">Us</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Cinema</option>
+                        <option value="1">Universal</option>
+                        <option value="2">Cinestar</option>
+                        <option value="3">Super Cinema</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Date</option>
+                        <option value="1">Thur, 28 March</option>
+                        <option value="2">Fri, 29 March</option>
+                        <option value="3">Sat, 30 March</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Time</option>
+                        <option value="1">10:45 pm</option>
+                        <option value="2">11:00 am</option>
+                    </select>
+                </div>
+            </div>
+            <div id="bcin1"></div>
+            <div class="block" id="bcin">
+                <p>Which Cinema You Are Going Today?</p>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>City</option>
+                        <option value="1">Lahore</option>
+                        <option value="2">Faislabad</option>
+                        <option value="3">Multan</option>
+                        <option value="4">Karachi</option>
+                        <option value="5">Islamabad</option>
+                        <option value="6">Rawalpindi</option>
+                        <option value="7">Quetta</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Movie</option>
+                        <option value="1">Notebook</option>
+                        <option value="2">Lucifer</option>
+                        <option value="3">Shazam!</option>
+                        <option value="3">Captive State</option>
+                        <option value="3">Us</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Cinema</option>
+                        <option value="1">Universal</option>
+                        <option value="2">Cinestar</option>
+                        <option value="3">Super Cinema</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Date</option>
+                        <option value="1">Thur, 28 March</option>
+                        <option value="2">Fri, 29 March</option>
+                        <option value="3">Sat, 30 March</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Time</option>
+                        <option value="1">10:45 pm</option>
+                        <option value="2">11:00 am</option>
+                    </select>
+                </div>
+            </div> 
+            <div id="btra1"></div>
+            <div class="block" id="btra">
+                <p>Where Would You Like To Go?</p>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>City</option>
+                        <option value="1">Lahore</option>
+                        <option value="2">Faislabad</option>
+                        <option value="3">Multan</option>
+                        <option value="4">Karachi</option>
+                        <option value="5">Islamabad</option>
+                        <option value="6">Rawalpindi</option>
+                        <option value="7">Quetta</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Movie</option>
+                        <option value="1">Notebook</option>
+                        <option value="2">Lucifer</option>
+                        <option value="3">Shazam!</option>
+                        <option value="3">Captive State</option>
+                        <option value="3">Us</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Cinema</option>
+                        <option value="1">Universal</option>
+                        <option value="2">Cinestar</option>
+                        <option value="3">Super Cinema</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Date</option>
+                        <option value="1">Thur, 28 March</option>
+                        <option value="2">Fri, 29 March</option>
+                        <option value="3">Sat, 30 March</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Time</option>
+                        <option value="1">10:45 pm</option>
+                        <option value="2">11:00 am</option>
+                    </select>
+                </div>
+            </div>
+            <div id="beve1"></div>
+            <div class="block" id="beve">
+                <p>Check out Some Cool Events Near You</p>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>City</option>
+                        <option value="1">Lahore</option>
+                        <option value="2">Faislabad</option>
+                        <option value="3">Multan</option>
+                        <option value="4">Karachi</option>
+                        <option value="5">Islamabad</option>
+                        <option value="6">Rawalpindi</option>
+                        <option value="7">Quetta</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Movie</option>
+                        <option value="1">Notebook</option>
+                        <option value="2">Lucifer</option>
+                        <option value="3">Shazam!</option>
+                        <option value="3">Captive State</option>
+                        <option value="3">Us</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Cinema</option>
+                        <option value="1">Universal</option>
+                        <option value="2">Cinestar</option>
+                        <option value="3">Super Cinema</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Date</option>
+                        <option value="1">Thur, 28 March</option>
+                        <option value="2">Fri, 29 March</option>
+                        <option value="3">Sat, 30 March</option>
+                    </select>
+                </div>
+                <div class="bmov2">
+                    <select class="city">
+                        <option disabled selected hidden>Time</option>
+                        <option value="1">10:45 pm</option>
+                        <option value="2">11:00 am</option>
+                    </select>
+                </div>
+            </div>                    
+        </div>
+    </body>
+</html>
